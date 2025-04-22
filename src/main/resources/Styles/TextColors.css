@@ -1,0 +1,16 @@
+/*
++-------------------------------+
+|        Text MainScreen      |
++-------------------------------+
+*/
+
+.textMainScreen {
+    -fx-text-fill: #979354;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.textMainScreenNames {
+    -fx-text-fill: #979354;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

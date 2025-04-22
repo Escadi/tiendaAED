@@ -1,0 +1,27 @@
+/*
++-------------------------------+
+|        Button MainScreen      |
++-------------------------------+
+*/
+.BtnMainScreen {
+    -fx-background-color: Transparent;
+    -fx-text-fill: #979354;
+    -fx-font-size: 20px;
+    -fx-border-color: #9e753e;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+}
+
+/*
++-------------------------------+
+|        Button Selections      |
++-------------------------------+
+*/
+
+.btnSelection {
+    -fx-background-color: #E1B16A;
+    -fx-border-color: #9e753e;
+    -fx-text-fill: #979354;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}

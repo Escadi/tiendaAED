@@ -10,7 +10,16 @@ module org.example.tiendaaed {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires mysql.connector.j;
+    requires java.sql;
 
-    opens org.example.tiendaaed to javafx.fxml;
-    exports org.example.tiendaaed;
+    opens Views to javafx.fxml, javafx.graphics, org.junit.jupiter.api;
+    opens Main to javafx.fxml, javafx.graphics,org.junit.jupiter.api;
+    opens View to javafx.fxml, javafx.graphics,org.junit.jupiter.api;
+    opens Class to javafx.base;
+
+    exports Main;
+    exports Views;
+
+
 }
