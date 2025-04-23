@@ -1,52 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.MainView">
+<AnchorPane fx:id="AnchorPaneMain" styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.MainView">
+
    <children>
-      <Label layoutX="436.0" layoutY="702.0" prefHeight="30.0" prefWidth="238.0" styleClass="textMainScreen" stylesheets="@../Styles/TextColors.css" text="Proyecto Acceso a datos">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="277.0" layoutY="751.0" prefHeight="20.0" prefWidth="557.0" styleClass="textMainScreenNames" stylesheets="@../Styles/TextColors.css" text="Realizado por : Eliu Viera Lorenzo , David Liaño Macias , Erico David Pérez Cárdenes">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Line endX="663.0" layoutX="279.0" layoutY="739.0" startX="-132.0" />
-      <ImageView fitHeight="317.0" fitWidth="1010.0" layoutX="32.0" layoutY="14.0" preserveRatio="true">
-         <image>
-            <Image url="@../Images/tiendaGibli.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="btnProductos" contentDisplay="TOP" layoutX="699.0" layoutY="390.0" mnemonicParsing="false" onAction="#productos" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Productos">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/ProductosGibli.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="btnUsuarios" contentDisplay="TOP" layoutX="448.0" layoutY="390.0" mnemonicParsing="false" onAction="#usuarios" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Usuarios">
-         <graphic>
-            <ImageView fitHeight="153.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/UsuariosGibli.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="btnPedidos" alignment="CENTER" contentDisplay="TOP" layoutX="196.0" layoutY="390.0" mnemonicParsing="false" onAction="#pedidos" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Pedidos">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/PedidosGibli.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+      <VBox fx:id="vboxMain" alignment="CENTER" spacing="40.0" style="-fx-padding: 50;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+         <ImageView fitHeight="317.0" fitWidth="1010.0" preserveRatio="true">
+            <image>
+               <Image url="@../Images/tiendaGibli.png" />
+            </image>
+            <VBox.margin>
+               <Insets bottom="30.0" />
+            </VBox.margin>
+         </ImageView>
+
+         <HBox alignment="CENTER" prefHeight="233.0" prefWidth="1010.0" spacing="120.0">
+            <Button fx:id="btnPedidos" contentDisplay="TOP" mnemonicParsing="false" onAction="#pedidos" prefHeight="152.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Pedidos">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/PedidosGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+
+            <Button fx:id="btnUsuarios" contentDisplay="TOP" mnemonicParsing="false" onAction="#usuarios" prefHeight="152.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Usuarios">
+               <graphic>
+                  <ImageView fitHeight="153.0" fitWidth="158.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/UsuariosGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+
+            <Button fx:id="btnProductos" contentDisplay="TOP" mnemonicParsing="false" onAction="#productos" prefHeight="152.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Productos">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="164.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/ProductosGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </HBox>
+
+         <Label prefHeight="30.0" prefWidth="238.0" styleClass="textMainScreen" stylesheets="@../Styles/TextColors.css" text="Proyecto Acceso a datos">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="50.0" />
+            </VBox.margin>
+         </Label>
+
+         <Line endX="663.0" startX="-132.0" />
+
+         <Label prefHeight="20.0" prefWidth="557.0" styleClass="textMainScreenNames" stylesheets="@../Styles/TextColors.css" text="Realizado por : Eliu Viera Lorenzo , David Liaño Macias , Erico David Pérez Cárdenes">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </Label>
+      </VBox>
    </children>
 </AnchorPane>

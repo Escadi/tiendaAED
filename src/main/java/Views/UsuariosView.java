@@ -5,16 +5,24 @@ import Connection.ConnectDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.event.ActionEvent;
 import Models.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 
 
 public class UsuariosView {
+    private double xOffset = 0;
+    private double yOffset = 0;
     @FXML
     private TextField TextBuscar;
     @FXML
@@ -23,6 +31,8 @@ public class UsuariosView {
     private Button btnEliminar;
     @FXML
     private Button btnAgregar;
+    @FXML
+    private Button btnAtras;
     @FXML
     private HBox hboxMod;
     @FXML
@@ -48,14 +58,51 @@ public class UsuariosView {
         ObservableList<Usuarios> usuario = FXCollections.observableArrayList(ModelUsuarios.getUsuarios());
         TablaUsuarios.setItems(usuario);
 
+        Popup pop = new Popup();
+        pop.getContent().add(hboxMod);
         TablaUsuarios.setOnMouseClicked(event -> {
-            if(event.getClickCount() == 2) {
-                Usuarios usuarioSeleccionado = TablaUsuarios.getSelectionModel().getSelectedItem();
-                if (usuarioSeleccionado != null) {
+            if (event.getClickCount() == 2) {
+                Usuarios usuarios = TablaUsuarios.getSelectionModel().getSelectedItem();
+                if (usuarios != null) {
+                    pop.show(
+                            TablaUsuarios.getScene().getWindow(),
+                            event.getSceneX(),
+                            event.getSceneY()
+                    );
                     hboxMod.setVisible(true);
+
                 }
             }
         });
+
+        vboxAgregar.setOnMousePressed(event -> {
+            xOffset = event.getSceneX() - vboxAgregar.getLayoutX();
+            yOffset = event.getSceneY() - vboxAgregar.getLayoutY();
+        });
+        vboxAgregar.setOnMouseDragged(event -> {
+            vboxAgregar.setLayoutX(event.getScreenX() - xOffset);
+            vboxAgregar.setLayoutY(event.getScreenY() - yOffset);
+        });
+    }
+
+
+    public void abrirVentana(String fxmlPath, String titulo) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setMaximized(true);
+            stage.setTitle(titulo);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void atras(ActionEvent event){
+        abrirVentana("/View/Main.fxml","Menu Principal");
+        ((Stage) btnAtras.getScene().getWindow()).close();
     }
 
 

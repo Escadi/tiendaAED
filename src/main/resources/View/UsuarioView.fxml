@@ -8,98 +8,128 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="820.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.UsuariosView">
+
     <children>
-        <ImageView fitHeight="159.0" fitWidth="403.0" layoutX="363.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../Images/usuariosLogo2.png" />
-            </image>
-            <viewport>
-                <Rectangle2D />
-            </viewport>
-        </ImageView>
-        <TextField fx:id="TextBuscar" alignment="CENTER" layoutX="448.0" layoutY="194.0" prefHeight="38.0" prefWidth="251.0" promptText="Buscar Usuario">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font></TextField>
-        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="448.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../Images/LupaGibli.png" />
-            </image>
-        </ImageView>
-        <Line endX="822.0" layoutX="221.0" layoutY="176.0" startX="-127.5" />
-        <TableView fx:id="TablaUsuarios" layoutX="98.0" layoutY="241.0" prefHeight="551.0" prefWidth="951.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css">
-            <columns>
-                <TableColumn fx:id="ColidUsuario" prefWidth="129.0" text="Nº Usuario" />
-                <TableColumn fx:id="ColNombre" prefWidth="208.0" text="Nombre" />
-                <TableColumn fx:id="ColApellido" prefWidth="233.0" text="Apellido" />
-                <TableColumn fx:id="ColEmail" prefWidth="377.0" text="Email" />
-            </columns>
-        </TableView>
-        <HBox fx:id="hboxMod" prefHeight="48.0" prefWidth="221.0" visible="false">
-            <children>
-                <Button fx:id="btnModificar" mnemonicParsing="false" prefHeight="49.0" prefWidth="119.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
+        <VBox fx:id="vboxMain" alignment="TOP_CENTER" spacing="30.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <HBox alignment="TOP_LEFT">
+                <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#atras" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="26.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/FlechaIzquidaGibli.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+
+            <ImageView fitHeight="159.0" fitWidth="403.0" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/usuariosLogo2.png" />
+                </image>
+            </ImageView>
+
+
+            <Line endX="822.0" startX="-127.5" />
+
+
+            <HBox alignment="CENTER" spacing="10.0">
+                <ImageView fitHeight="38.0" fitWidth="39.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/LupaGibli.png" />
+                    </image>
+                </ImageView>
+
+                <TextField fx:id="TextBuscar" alignment="CENTER" prefHeight="38.0" prefWidth="300.0" promptText="Buscar Usuario">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+
+                <Button fx:id="btnAgregar" onAction="#agregarUsuario" prefHeight="38.0" prefWidth="38.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/AgregarUsuarioGibli.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+
+            <HBox fx:id="hboxMod" alignment="CENTER" spacing="10.0" visible="false">
+                <Button fx:id="btnModificar" prefHeight="49.0" prefWidth="119.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
                             <image>
                                 <Image url="@../Images/EditarGibli.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnEliminar" mnemonicParsing="false" prefHeight="50.0" prefWidth="102.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
+                <Button fx:id="btnEliminar" prefHeight="50.0" prefWidth="102.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="28.0" fitWidth="26.0" preserveRatio="true">
                             <image>
                                 <Image url="@../Images/EliminarGibli.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-            </children>
-        </HBox>
-      <Button fx:id="btnAgregar" layoutX="1000.0" layoutY="137.0" mnemonicParsing="false" onAction="#agregarUsuario" prefHeight="31.0" prefWidth="38.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css">
-         <graphic>
-            <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/AgregarUsuarioGibli.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <VBox fx:id="vboxAgregar" layoutX="400.0" layoutY="300.0" prefHeight="456.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
-         <children>
-            <Button fx:id="btnCerrar" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
-               <graphic>
-                  <ImageView fx:id="btnCerrar" fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/CerrarGibli.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets bottom="-50.0" left="216.0" />
-               </VBox.margin>
+            </HBox>
+   
+   
+            <TableView fx:id="TablaUsuarios" maxHeight="503.0" maxWidth="1001.0" minHeight="502.0" minWidth="1000.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="ColidUsuario" prefWidth="129.0" text="Nº Usuario" />
+                    <TableColumn fx:id="ColNombre" prefWidth="246.0" text="Nombre" />
+                    <TableColumn fx:id="ColApellido" prefWidth="268.0" text="Apellido" />
+                    <TableColumn fx:id="ColEmail" prefWidth="375.0" text="Email" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox fx:id="vboxAgregar" prefHeight="434.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
+
+            <Button fx:id="btnCerrar" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
+                <graphic>
+                    <ImageView fitHeight="27.0" fitWidth="24.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../Images/CerrarGibli.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            <VBox.margin>
+               <Insets bottom="-50.0" left="210.0" />
+            </VBox.margin>
             </Button>
-            <ImageView fitHeight="91.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/usuariosLogo2.png" />
-               </image>
+
+            <ImageView fitHeight="91.0" fitWidth="247.0" preserveRatio="true">
+                <image>
+                    <Image url="@../Images/usuariosLogo2.png" />
+                </image>
             </ImageView>
+
             <Line endX="100.0" startX="-150.0" />
+
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
             <TextField />
+
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nombre" />
             <TextField />
+
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Apellido" />
             <TextField />
+
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Email" />
             <TextField />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Confirmar">
-               <VBox.margin>
-                  <Insets left="75.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-         </children></VBox>
-    </children>
 
+            <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="CONFIRMAR">
+            <VBox.margin>
+               <Insets left="80.0" top="10.0" />
+            </VBox.margin></Button>
+        </VBox>
+    </children>
 </AnchorPane>

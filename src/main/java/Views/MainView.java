@@ -6,20 +6,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainView {
-
     @FXML
     private Button btnPedidos;
     @FXML
     private Button btnUsuarios;
     @FXML
     private Button btnProductos;
+    @FXML
+    private VBox vboxMain;
 
-    public MainView() {}
+    public MainView() {
+    }
+
+    public void initialize() {
+
+        if(vboxMain != null) {
+            vboxMain.setFillWidth(true);
+        }
+
+    }
 
 
     public void abrirVentana(String fxmlPath, String titulo) {
@@ -28,7 +40,7 @@ public class MainView {
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            //stage.setMaximized(true);
+            stage.setMaximized(true);
             stage.setTitle(titulo);
             stage.show();
         } catch (IOException e) {

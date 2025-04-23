@@ -7,15 +7,16 @@
     -fx-background-color: Transparent;
     -fx-text-fill: #979354;
     -fx-font-size: 20px;
+    -fx-border-width: 3px;
     -fx-border-color: #9e753e;
     -fx-background-radius: 5px;
     -fx-font-weight: bold;
 }
 .BtnMainScreen:hover{
     -fx-background-color: transparent;
-    -fx-border-color: #9e753e;
-    -fx-border-width: 5px;
+    -fx-border-color: #ecae7c;
     -fx-font-size: 20px;
+    -fx-border-radius: 10px;
     -fx-background-radius: 5px;
     -fx-font-weight: bold;
 }
