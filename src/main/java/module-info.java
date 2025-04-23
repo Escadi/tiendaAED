@@ -12,6 +12,7 @@ module org.example.tiendaaed {
     requires com.almasb.fxgl.all;
     requires mysql.connector.j;
     requires java.sql;
+    requires java.desktop;
 
     opens Views to javafx.fxml, javafx.graphics, org.junit.jupiter.api;
     opens Main to javafx.fxml, javafx.graphics,org.junit.jupiter.api;

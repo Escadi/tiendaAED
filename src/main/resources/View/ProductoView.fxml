@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="820.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.ProductosView">
+    <children>
+        <ImageView fitHeight="159.0" fitWidth="403.0" layoutX="363.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Images/productosLogo2.png" />
+            </image>
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+        </ImageView>
+        <TextField fx:id="TextBuscar" alignment="CENTER" layoutX="458.0" layoutY="183.0" prefHeight="38.0" prefWidth="251.0" promptText="Buscar Producto">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></TextField>
+        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="458.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Images/LupaGibli.png" />
+            </image>
+        </ImageView>
+        <Line endX="822.0" layoutX="221.0" layoutY="176.0" startX="-127.5" />
+        <TableView fx:id="TablaProductos" layoutX="164.0" layoutY="241.0" prefHeight="524.0" prefWidth="819.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css">
+            <columns>
+                <TableColumn fx:id="ColidProducto" prefWidth="107.0" text="Nº Producto" />
+                <TableColumn fx:id="ColProducto" prefWidth="227.0" text="Nombre" />
+                <TableColumn fx:id="ColPrecio" prefWidth="185.0" text="Precio" />
+                <TableColumn fx:id="ColidCategoria" prefWidth="298.0" text="Categoria" />
+            </columns>
+        </TableView>
+        <HBox fx:id="hboxMod" prefHeight="48.0" prefWidth="221.0" visible="false">
+            <children>
+                <Button fx:id="btnModificar" mnemonicParsing="false" prefHeight="49.0" prefWidth="119.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/EditarGibli.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnEliminar" mnemonicParsing="false" prefHeight="50.0" prefWidth="102.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
+                    <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/EliminarGibli.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+
+</AnchorPane>

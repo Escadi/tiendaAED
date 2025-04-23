@@ -40,6 +40,14 @@ public class MainView {
         abrirVentana("/View/PedidoView.fxml","Pedidos");
         ((Stage) btnPedidos.getScene().getWindow()).close();
     }
+    public void usuarios(ActionEvent event){
+        abrirVentana("/View/UsuarioView.fxml","Usuarios");
+        ((Stage) btnUsuarios.getScene().getWindow()).close();
+    }
+    public void productos(ActionEvent event){
+        abrirVentana("/View/ProductoView.fxml","Productos");
+        ((Stage) btnProductos.getScene().getWindow()).close();
+    }
 
 
 

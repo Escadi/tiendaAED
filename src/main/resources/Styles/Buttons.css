@@ -11,6 +11,14 @@
     -fx-background-radius: 5px;
     -fx-font-weight: bold;
 }
+.BtnMainScreen:hover{
+    -fx-background-color: transparent;
+    -fx-border-color: #9e753e;
+    -fx-border-width: 5px;
+    -fx-font-size: 20px;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+}
 
 /*
 +-------------------------------+
@@ -24,4 +32,31 @@
     -fx-text-fill: #979354;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
+}
+.btnSelection:hover {
+    -fx-background-color: #9e753e;
+    -fx-border-color: #9e753e;
+    -fx-text-fill: #E1B16A;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/*
++-------------------------------+
+|      Button Close Window      |
++-------------------------------+
+*/
+
+.btnClose{
+    -fx-background-color: transparent;
+}
+.btnClose:hover{
+    -fx-background-color: transparent;
+    -fx-scale-y: 1.2;
+    -fx-scale-x: 1.2;
+ }
+.btnClose:pressed {
+    -fx-background-color: transparent;
+    -fx-scale-y: 1;
+    -fx-scale-x: 1;
 }

@@ -1,23 +1,23 @@
 package Class;
 
 public class Usuarios {
-    private String id;
+    private int id;
     private String nombre;
     private String apellido;
     private String email;
 
-    public Usuarios(String id, String nombre, String apellido, String email) {
+    public Usuarios(int id, String nombre, String apellido, String email) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -11,7 +11,7 @@ import Class.*;
 
 public class ModelProductos {
 
-    public static List<Productos> getPedidos() {
+    public static List<Productos> getProductos() {
         List<Productos> productos = new ArrayList<>();
         String sql = "SELECT id,nombre,precio,categoria_id FROM productos";
         try {

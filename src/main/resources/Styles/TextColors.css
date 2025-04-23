@@ -14,3 +14,16 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
+/*
++-------------------------------+
+|           Text Vbox           |
++-------------------------------+
+*/
+
+.textVbox {
+    -fx-text-fill: #979354;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+

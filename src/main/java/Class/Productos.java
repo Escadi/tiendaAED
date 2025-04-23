@@ -9,9 +9,7 @@ public class Productos {
     public Productos(int id, String nombre, double precio, int idCategoria) {
         this.id = id;
         this.nombre = nombre;
-
         this.precio = precio;
-
         this.idCategoria = idCategoria;
     }
 

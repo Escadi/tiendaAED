@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="820.0" prefWidth="1100.0" styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.MainView">
+<AnchorPane styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.MainView">
    <children>
       <Label layoutX="436.0" layoutY="702.0" prefHeight="30.0" prefWidth="238.0" styleClass="textMainScreen" stylesheets="@../Styles/TextColors.css" text="Proyecto Acceso a datos">
          <font>
@@ -24,7 +24,7 @@
             <Image url="@../Images/tiendaGibli.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnProductos" contentDisplay="TOP" layoutX="699.0" layoutY="390.0" mnemonicParsing="false" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Productos">
+      <Button fx:id="btnProductos" contentDisplay="TOP" layoutX="699.0" layoutY="390.0" mnemonicParsing="false" onAction="#productos" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Productos">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,7 +32,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnUsuarios" contentDisplay="TOP" layoutX="448.0" layoutY="390.0" mnemonicParsing="false" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Usuarios">
+      <Button fx:id="btnUsuarios" contentDisplay="TOP" layoutX="448.0" layoutY="390.0" mnemonicParsing="false" onAction="#usuarios" prefHeight="152.0" prefWidth="177.0" styleClass="BtnMainScreen" stylesheets="@../Styles/Buttons.css" text="Usuarios">
          <graphic>
             <ImageView fitHeight="153.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                <image>
