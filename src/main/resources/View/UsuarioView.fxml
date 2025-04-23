@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="820.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.UsuariosView">
+<AnchorPane prefHeight="820.0" prefWidth="1100.0" styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.UsuariosView">
 
     <children>
         <VBox fx:id="vboxMain" alignment="TOP_CENTER" spacing="30.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
@@ -31,7 +31,7 @@
             </ImageView>
 
 
-            <Line endX="822.0" startX="-127.5" />
+            <Line endX="822.0" startX="-127.5" strokeWidth="3.0" />
 
 
             <HBox alignment="CENTER" spacing="10.0">
@@ -59,8 +59,17 @@
             </HBox>
 
 
-            <HBox fx:id="hboxMod" alignment="CENTER" spacing="10.0" visible="false">
-                <Button fx:id="btnModificar" prefHeight="49.0" prefWidth="119.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
+            <HBox fx:id="hboxMod" alignment="CENTER" spacing="3.0" visible="false">
+            <Button fx:id="btnModificar1" layoutX="419.0" layoutY="10.0" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Pedido">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/AgregarPedidoGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+                <Button fx:id="btnModificar" onAction="#modificarUsuario" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
                             <image>
@@ -69,7 +78,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnEliminar" prefHeight="50.0" prefWidth="102.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
+                <Button fx:id="btnEliminar" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
                     <graphic>
                         <ImageView fitHeight="28.0" fitWidth="26.0" preserveRatio="true">
                             <image>
@@ -79,8 +88,8 @@
                     </graphic>
                 </Button>
             </HBox>
-   
-   
+
+
             <TableView fx:id="TablaUsuarios" maxHeight="503.0" maxWidth="1001.0" minHeight="502.0" minWidth="1000.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="ColidUsuario" prefWidth="129.0" text="Nº Usuario" />
@@ -91,7 +100,7 @@
             </TableView>
         </VBox>
 
-        <VBox fx:id="vboxAgregar" prefHeight="434.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
+        <VBox fx:id="vboxAgregar" prefHeight="443.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
 
             <Button fx:id="btnCerrar" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
                 <graphic>
@@ -112,7 +121,7 @@
                 </image>
             </ImageView>
 
-            <Line endX="100.0" startX="-150.0" />
+            <Line endX="100.0" startX="-150.0" strokeWidth="3.0" />
 
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
             <TextField />
@@ -131,5 +140,40 @@
                <Insets left="80.0" top="10.0" />
             </VBox.margin></Button>
         </VBox>
+      <VBox fx:id="vboxModificar" layoutX="10.0" layoutY="10.0" prefHeight="443.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
+         <children>
+            <Button fx:id="btnCerrar1" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="24.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/CerrarGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="210.0" />
+               </VBox.margin>
+            </Button>
+            <ImageView fitHeight="91.0" fitWidth="247.0" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/usuariosLogo2.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" startX="-150.0" strokeWidth="3.0" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
+            <TextField editable="false" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nombre" />
+            <TextField />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Apellido" />
+            <TextField />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Email" />
+            <TextField />
+            <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="MODIFICAR">
+               <VBox.margin>
+                  <Insets left="80.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

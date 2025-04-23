@@ -34,6 +34,12 @@ public class MainView {
     }
 
 
+    /*
+   +-------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                                             Botones de la interfaz                                                              |
+   +-------------------------------------------------------------------------------------------------------------------------------------------------+
+   */
+
     public void abrirVentana(String fxmlPath, String titulo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));

@@ -62,7 +62,7 @@
             </VBox.margin>
          </Label>
 
-         <Line endX="663.0" startX="-132.0" />
+         <Line endX="663.0" startX="-132.0" strokeWidth="3.0" />
 
          <Label prefHeight="20.0" prefWidth="557.0" styleClass="textMainScreenNames" stylesheets="@../Styles/TextColors.css" text="Realizado por : Eliu Viera Lorenzo , David Liaño Macias , Erico David Pérez Cárdenes">
             <font>

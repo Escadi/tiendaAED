@@ -5,8 +5,9 @@
 */
 
 .vboxUser{
-    -fx-background-color: #f0f0f0;
+    -fx-background-color: #fef9df;
     -fx-border-color: black;
+    -fx-border-width: 2px;
     -fx-padding: 10px;
     -fx-spacing: 10px;
 }

@@ -34,9 +34,13 @@ public class UsuariosView {
     @FXML
     private Button btnAtras;
     @FXML
+    private VBox vboxModificar;
+    @FXML
     private HBox hboxMod;
     @FXML
     private VBox vboxAgregar;
+    @FXML
+    private TextField TextNombre;
     @FXML
     private TableView<Usuarios> TablaUsuarios;
     @FXML
@@ -83,8 +87,26 @@ public class UsuariosView {
             vboxAgregar.setLayoutX(event.getScreenX() - xOffset);
             vboxAgregar.setLayoutY(event.getScreenY() - yOffset);
         });
+        vboxModificar.setOnMousePressed(event -> {
+            xOffset = event.getSceneX() - vboxModificar.getLayoutX();
+            yOffset = event.getSceneY() - vboxModificar.getLayoutY();
+        });
+        vboxModificar.setOnMouseDragged(event -> {
+            vboxModificar.setLayoutX(event.getScreenX() - xOffset);
+            vboxModificar.setLayoutY(event.getScreenY() - yOffset);
+        });
     }
 
+
+
+
+
+
+    /*
+   +----------------------------------------------------------------------------------------------------------------+
+   |                                        Botones de la interfaz                                                  |
+   +----------------------------------------------------------------------------------------------------------------+
+   */
 
     public void abrirVentana(String fxmlPath, String titulo) {
         try {
@@ -105,17 +127,16 @@ public class UsuariosView {
         ((Stage) btnAtras.getScene().getWindow()).close();
     }
 
-
-
-
-
-
-
+    public void modificarUsuario(ActionEvent event) {
+        vboxModificar.setVisible(true);
+        hboxMod.setVisible(false);
+    }
     public void agregarUsuario(ActionEvent event) {
         vboxAgregar.setVisible(true);
     }
     public void cerrarVentana(ActionEvent event) {
         vboxAgregar.setVisible(false);
+        vboxModificar.setVisible(false);
     }
 
 
