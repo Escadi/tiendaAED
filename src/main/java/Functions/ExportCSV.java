@@ -1,5 +1,29 @@
 package Functions;
+import Class.*;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.List;
+import Models.ModelUsuarios;
 
 public class ExportCSV {
-    //Además, tendrá que tener la posibilidad de exportar a los usuarios en formato CSV, separado por comas
+    public void ExportUsuarios(){
+        List<Usuarios> usuariosList = ModelUsuarios.getUsuarios();
+
+        try {
+            BufferedWriter ficheroCSVUsuarios = new BufferedWriter(new FileWriter("Usuarios.csv"));
+            ficheroCSVUsuarios.write("ID,Nombre,Apellidos,Email\n");
+            for (Usuarios usuario : usuariosList){
+                ficheroCSVUsuarios.write(usuario.csvFormat()+"\n");
+            }
+
+            ficheroCSVUsuarios.close();
+        } catch (IOException e) {
+        }
+
+    }
+
 }
+
+
+

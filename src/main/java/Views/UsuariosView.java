@@ -2,6 +2,8 @@ package Views;
 
 import Class.*;
 import Connection.ConnectDB;
+import Functions.ExportCSV;
+import Models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.event.ActionEvent;
-import Models.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
@@ -95,6 +96,15 @@ public class UsuariosView {
             vboxModificar.setLayoutX(event.getScreenX() - xOffset);
             vboxModificar.setLayoutY(event.getScreenY() - yOffset);
         });
+
+
+
+        //Test de exportar CSV----------------------
+        ExportCSV exportCSV= new ExportCSV();
+        exportCSV.ExportUsuarios();
+
+        /////-----------------------------------------
+
     }
 
 

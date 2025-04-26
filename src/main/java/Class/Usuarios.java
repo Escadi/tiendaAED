@@ -45,6 +45,11 @@ public class Usuarios {
         this.email = email;
     }
 
+
+    public String csvFormat(){
+        return id + "," + nombre + "," + apellido + "," + email;
+    }
+
     @Override
     public String toString() {
         return "Usuarios{" +
