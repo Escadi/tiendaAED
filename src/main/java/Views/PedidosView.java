@@ -2,6 +2,7 @@ package Views;
 
 import Class.*;
 import Connection.ConnectDB;
+import Functions.ExportXML;
 import Models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -58,6 +59,12 @@ public class PedidosView {
         ColFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         ObservableList<Pedidos> pedidos = FXCollections.observableArrayList(ModelPedidos.getPedidos());
         tablaPedidos.setItems(pedidos);
+
+        //Test de exportar XML----------------------
+        ExportXML exportXML = new ExportXML();
+        exportXML.ExportPedidos();
+
+        /////-----------------------------------------
 
         Popup pop = new Popup();
         pop.getContent().add(hboxMod);

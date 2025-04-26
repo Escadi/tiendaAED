@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pedidos>
+    <Pedido id="1">
+        <usuario_id>47</usuario_id>
+        <producto_id>33</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-18</fecha>
+    </Pedido>
+    <Pedido id="2">
+        <usuario_id>37</usuario_id>
+        <producto_id>22</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-08-03</fecha>
+    </Pedido>
+    <Pedido id="3">
+        <usuario_id>24</usuario_id>
+        <producto_id>2</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-03-09</fecha>
+    </Pedido>
+    <Pedido id="4">
+        <usuario_id>38</usuario_id>
+        <producto_id>8</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-11-15</fecha>
+    </Pedido>
+    <Pedido id="5">
+        <usuario_id>41</usuario_id>
+        <producto_id>31</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-02</fecha>
+    </Pedido>
+    <Pedido id="6">
+        <usuario_id>16</usuario_id>
+        <producto_id>1</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-01-02</fecha>
+    </Pedido>
+    <Pedido id="7">
+        <usuario_id>1</usuario_id>
+        <producto_id>31</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-08-02</fecha>
+    </Pedido>
+    <Pedido id="8">
+        <usuario_id>44</usuario_id>
+        <producto_id>27</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-05-21</fecha>
+    </Pedido>
+    <Pedido id="9">
+        <usuario_id>49</usuario_id>
+        <producto_id>9</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-12-08</fecha>
+    </Pedido>
+    <Pedido id="10">
+        <usuario_id>1</usuario_id>
+        <producto_id>2</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-05-08</fecha>
+    </Pedido>
+    <Pedido id="11">
+        <usuario_id>48</usuario_id>
+        <producto_id>2</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-09-17</fecha>
+    </Pedido>
+    <Pedido id="12">
+        <usuario_id>16</usuario_id>
+        <producto_id>44</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2024-05-13</fecha>
+    </Pedido>
+    <Pedido id="13">
+        <usuario_id>27</usuario_id>
+        <producto_id>6</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-11-13</fecha>
+    </Pedido>
+    <Pedido id="14">
+        <usuario_id>6</usuario_id>
+        <producto_id>12</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-10-03</fecha>
+    </Pedido>
+    <Pedido id="15">
+        <usuario_id>8</usuario_id>
+        <producto_id>28</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-07-16</fecha>
+    </Pedido>
+    <Pedido id="16">
+        <usuario_id>2</usuario_id>
+        <producto_id>46</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-07-06</fecha>
+    </Pedido>
+    <Pedido id="17">
+        <usuario_id>22</usuario_id>
+        <producto_id>41</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2025-02-16</fecha>
+    </Pedido>
+    <Pedido id="18">
+        <usuario_id>9</usuario_id>
+        <producto_id>50</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-05-02</fecha>
+    </Pedido>
+    <Pedido id="19">
+        <usuario_id>28</usuario_id>
+        <producto_id>1</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-11-12</fecha>
+    </Pedido>
+    <Pedido id="20">
+        <usuario_id>1</usuario_id>
+        <producto_id>47</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-11-07</fecha>
+    </Pedido>
+    <Pedido id="21">
+        <usuario_id>21</usuario_id>
+        <producto_id>29</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-03-23</fecha>
+    </Pedido>
+    <Pedido id="22">
+        <usuario_id>4</usuario_id>
+        <producto_id>39</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-05-16</fecha>
+    </Pedido>
+    <Pedido id="23">
+        <usuario_id>27</usuario_id>
+        <producto_id>44</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-12-05</fecha>
+    </Pedido>
+    <Pedido id="24">
+        <usuario_id>2</usuario_id>
+        <producto_id>47</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-06-28</fecha>
+    </Pedido>
+    <Pedido id="25">
+        <usuario_id>49</usuario_id>
+        <producto_id>36</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-02-19</fecha>
+    </Pedido>
+    <Pedido id="26">
+        <usuario_id>32</usuario_id>
+        <producto_id>33</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-03-11</fecha>
+    </Pedido>
+    <Pedido id="27">
+        <usuario_id>7</usuario_id>
+        <producto_id>8</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-08-11</fecha>
+    </Pedido>
+    <Pedido id="28">
+        <usuario_id>30</usuario_id>
+        <producto_id>11</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-08-09</fecha>
+    </Pedido>
+    <Pedido id="29">
+        <usuario_id>36</usuario_id>
+        <producto_id>12</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-04-23</fecha>
+    </Pedido>
+    <Pedido id="30">
+        <usuario_id>1</usuario_id>
+        <producto_id>23</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-06-04</fecha>
+    </Pedido>
+    <Pedido id="31">
+        <usuario_id>16</usuario_id>
+        <producto_id>42</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2025-03-20</fecha>
+    </Pedido>
+    <Pedido id="32">
+        <usuario_id>31</usuario_id>
+        <producto_id>42</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-06-02</fecha>
+    </Pedido>
+    <Pedido id="33">
+        <usuario_id>45</usuario_id>
+        <producto_id>36</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-11-18</fecha>
+    </Pedido>
+    <Pedido id="34">
+        <usuario_id>18</usuario_id>
+        <producto_id>29</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2024-09-12</fecha>
+    </Pedido>
+    <Pedido id="35">
+        <usuario_id>17</usuario_id>
+        <producto_id>31</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-09-06</fecha>
+    </Pedido>
+    <Pedido id="36">
+        <usuario_id>2</usuario_id>
+        <producto_id>24</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-02-13</fecha>
+    </Pedido>
+    <Pedido id="37">
+        <usuario_id>43</usuario_id>
+        <producto_id>20</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-01-28</fecha>
+    </Pedido>
+    <Pedido id="38">
+        <usuario_id>24</usuario_id>
+        <producto_id>46</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-03-07</fecha>
+    </Pedido>
+    <Pedido id="39">
+        <usuario_id>18</usuario_id>
+        <producto_id>20</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-02-22</fecha>
+    </Pedido>
+    <Pedido id="40">
+        <usuario_id>11</usuario_id>
+        <producto_id>8</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-08-06</fecha>
+    </Pedido>
+    <Pedido id="41">
+        <usuario_id>40</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-07-08</fecha>
+    </Pedido>
+    <Pedido id="42">
+        <usuario_id>43</usuario_id>
+        <producto_id>18</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-03-24</fecha>
+    </Pedido>
+    <Pedido id="43">
+        <usuario_id>31</usuario_id>
+        <producto_id>2</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-07-10</fecha>
+    </Pedido>
+    <Pedido id="44">
+        <usuario_id>15</usuario_id>
+        <producto_id>8</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-17</fecha>
+    </Pedido>
+    <Pedido id="45">
+        <usuario_id>37</usuario_id>
+        <producto_id>39</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2025-02-15</fecha>
+    </Pedido>
+    <Pedido id="46">
+        <usuario_id>11</usuario_id>
+        <producto_id>17</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-09-02</fecha>
+    </Pedido>
+    <Pedido id="47">
+        <usuario_id>4</usuario_id>
+        <producto_id>21</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2025-01-20</fecha>
+    </Pedido>
+    <Pedido id="48">
+        <usuario_id>22</usuario_id>
+        <producto_id>15</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-04-14</fecha>
+    </Pedido>
+    <Pedido id="49">
+        <usuario_id>18</usuario_id>
+        <producto_id>36</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-02-03</fecha>
+    </Pedido>
+    <Pedido id="50">
+        <usuario_id>43</usuario_id>
+        <producto_id>38</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2025-03-31</fecha>
+    </Pedido>
+    <Pedido id="51">
+        <usuario_id>19</usuario_id>
+        <producto_id>5</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2025-02-03</fecha>
+    </Pedido>
+    <Pedido id="52">
+        <usuario_id>34</usuario_id>
+        <producto_id>16</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-14</fecha>
+    </Pedido>
+    <Pedido id="53">
+        <usuario_id>42</usuario_id>
+        <producto_id>28</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-05-22</fecha>
+    </Pedido>
+    <Pedido id="54">
+        <usuario_id>17</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-09-25</fecha>
+    </Pedido>
+    <Pedido id="55">
+        <usuario_id>37</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-05-24</fecha>
+    </Pedido>
+    <Pedido id="56">
+        <usuario_id>3</usuario_id>
+        <producto_id>7</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-09-04</fecha>
+    </Pedido>
+    <Pedido id="57">
+        <usuario_id>26</usuario_id>
+        <producto_id>9</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-10-21</fecha>
+    </Pedido>
+    <Pedido id="58">
+        <usuario_id>12</usuario_id>
+        <producto_id>41</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-10-07</fecha>
+    </Pedido>
+    <Pedido id="59">
+        <usuario_id>22</usuario_id>
+        <producto_id>43</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2025-01-28</fecha>
+    </Pedido>
+    <Pedido id="60">
+        <usuario_id>10</usuario_id>
+        <producto_id>29</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-11-26</fecha>
+    </Pedido>
+    <Pedido id="61">
+        <usuario_id>27</usuario_id>
+        <producto_id>19</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2025-03-17</fecha>
+    </Pedido>
+    <Pedido id="62">
+        <usuario_id>42</usuario_id>
+        <producto_id>19</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-09-08</fecha>
+    </Pedido>
+    <Pedido id="63">
+        <usuario_id>23</usuario_id>
+        <producto_id>36</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-08-03</fecha>
+    </Pedido>
+    <Pedido id="64">
+        <usuario_id>14</usuario_id>
+        <producto_id>4</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2024-05-08</fecha>
+    </Pedido>
+    <Pedido id="65">
+        <usuario_id>23</usuario_id>
+        <producto_id>8</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-05-20</fecha>
+    </Pedido>
+    <Pedido id="66">
+        <usuario_id>22</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-04-28</fecha>
+    </Pedido>
+    <Pedido id="67">
+        <usuario_id>22</usuario_id>
+        <producto_id>41</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-24</fecha>
+    </Pedido>
+    <Pedido id="68">
+        <usuario_id>42</usuario_id>
+        <producto_id>46</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2025-04-02</fecha>
+    </Pedido>
+    <Pedido id="69">
+        <usuario_id>30</usuario_id>
+        <producto_id>15</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2025-03-29</fecha>
+    </Pedido>
+    <Pedido id="70">
+        <usuario_id>3</usuario_id>
+        <producto_id>22</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-12-27</fecha>
+    </Pedido>
+    <Pedido id="71">
+        <usuario_id>26</usuario_id>
+        <producto_id>27</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-08-18</fecha>
+    </Pedido>
+    <Pedido id="72">
+        <usuario_id>6</usuario_id>
+        <producto_id>16</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-06-30</fecha>
+    </Pedido>
+    <Pedido id="73">
+        <usuario_id>50</usuario_id>
+        <producto_id>1</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-04-19</fecha>
+    </Pedido>
+    <Pedido id="74">
+        <usuario_id>40</usuario_id>
+        <producto_id>30</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2024-09-25</fecha>
+    </Pedido>
+    <Pedido id="75">
+        <usuario_id>33</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2025-04-04</fecha>
+    </Pedido>
+    <Pedido id="76">
+        <usuario_id>29</usuario_id>
+        <producto_id>50</producto_id>
+        <cantidad>4.0</cantidad>
+        <fecha>2024-04-27</fecha>
+    </Pedido>
+    <Pedido id="77">
+        <usuario_id>22</usuario_id>
+        <producto_id>26</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-06-11</fecha>
+    </Pedido>
+    <Pedido id="78">
+        <usuario_id>12</usuario_id>
+        <producto_id>17</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-01-29</fecha>
+    </Pedido>
+    <Pedido id="79">
+        <usuario_id>29</usuario_id>
+        <producto_id>33</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-11-13</fecha>
+    </Pedido>
+    <Pedido id="80">
+        <usuario_id>1</usuario_id>
+        <producto_id>22</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-10-05</fecha>
+    </Pedido>
+    <Pedido id="81">
+        <usuario_id>42</usuario_id>
+        <producto_id>44</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-09-11</fecha>
+    </Pedido>
+    <Pedido id="82">
+        <usuario_id>20</usuario_id>
+        <producto_id>16</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2025-02-24</fecha>
+    </Pedido>
+    <Pedido id="83">
+        <usuario_id>16</usuario_id>
+        <producto_id>47</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-06-01</fecha>
+    </Pedido>
+    <Pedido id="84">
+        <usuario_id>28</usuario_id>
+        <producto_id>26</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-06-19</fecha>
+    </Pedido>
+    <Pedido id="85">
+        <usuario_id>13</usuario_id>
+        <producto_id>9</producto_id>
+        <cantidad>1.0</cantidad>
+        <fecha>2024-05-04</fecha>
+    </Pedido>
+    <Pedido id="86">
+        <usuario_id>23</usuario_id>
+        <producto_id>4</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-08-21</fecha>
+    </Pedido>
+    <Pedido id="87">
+        <usuario_id>19</usuario_id>
+        <producto_id>18</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-10-10</fecha>
+    </Pedido>
+    <Pedido id="88">
+        <usuario_id>7</usuario_id>
+        <producto_id>4</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-09-29</fecha>
+    </Pedido>
+    <Pedido id="89">
+        <usuario_id>7</usuario_id>
+        <producto_id>10</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-12-31</fecha>
+    </Pedido>
+    <Pedido id="90">
+        <usuario_id>28</usuario_id>
+        <producto_id>37</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-07-02</fecha>
+    </Pedido>
+    <Pedido id="91">
+        <usuario_id>11</usuario_id>
+        <producto_id>14</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2024-04-27</fecha>
+    </Pedido>
+    <Pedido id="92">
+        <usuario_id>47</usuario_id>
+        <producto_id>37</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-05-12</fecha>
+    </Pedido>
+    <Pedido id="93">
+        <usuario_id>45</usuario_id>
+        <producto_id>33</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-07-04</fecha>
+    </Pedido>
+    <Pedido id="94">
+        <usuario_id>5</usuario_id>
+        <producto_id>42</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-10-28</fecha>
+    </Pedido>
+    <Pedido id="95">
+        <usuario_id>27</usuario_id>
+        <producto_id>41</producto_id>
+        <cantidad>5.0</cantidad>
+        <fecha>2025-03-18</fecha>
+    </Pedido>
+    <Pedido id="96">
+        <usuario_id>29</usuario_id>
+        <producto_id>46</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-12-21</fecha>
+    </Pedido>
+    <Pedido id="97">
+        <usuario_id>18</usuario_id>
+        <producto_id>15</producto_id>
+        <cantidad>2.0</cantidad>
+        <fecha>2024-06-21</fecha>
+    </Pedido>
+    <Pedido id="98">
+        <usuario_id>2</usuario_id>
+        <producto_id>37</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-05-03</fecha>
+    </Pedido>
+    <Pedido id="99">
+        <usuario_id>34</usuario_id>
+        <producto_id>11</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-08-16</fecha>
+    </Pedido>
+    <Pedido id="100">
+        <usuario_id>38</usuario_id>
+        <producto_id>25</producto_id>
+        <cantidad>3.0</cantidad>
+        <fecha>2024-08-15</fecha>
+    </Pedido>
+</Pedidos>
