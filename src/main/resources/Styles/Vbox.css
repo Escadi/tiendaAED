@@ -11,3 +11,7 @@
     -fx-padding: 10px;
     -fx-spacing: 10px;
 }
+.vboxTextField{
+    -fx-background-color: #bfbebb;
+    -fx-text-fill: #000000;
+}

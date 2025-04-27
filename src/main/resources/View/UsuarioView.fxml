@@ -60,7 +60,7 @@
 
 
             <HBox fx:id="hboxMod" alignment="CENTER" spacing="3.0" visible="false">
-            <Button fx:id="btnModificar1" layoutX="419.0" layoutY="10.0" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Pedido">
+            <Button fx:id="btnPedido" layoutX="419.0" layoutY="10.0" onAction="#pedidosAgregar" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Pedido">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
                      <image>
@@ -69,7 +69,7 @@
                   </ImageView>
                </graphic>
             </Button>
-                <Button fx:id="btnModificar" onAction="#modificarUsuario" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
+                <Button fx:id="btnModificarU" onAction="#modificarUsuario" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Editar">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
                             <image>
@@ -78,7 +78,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnEliminar" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
+                <Button fx:id="btnEliminar" onAction="#eliminar" prefHeight="50.0" prefWidth="100.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="Eliminar">
                     <graphic>
                         <ImageView fitHeight="28.0" fitWidth="26.0" preserveRatio="true">
                             <image>
@@ -88,6 +88,9 @@
                     </graphic>
                 </Button>
             </HBox>
+
+
+
             <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
                 <Button fx:id="btnExportCSV" onAction="#createCSV" prefHeight="38.0" prefWidth="38.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css">
                     <graphic>
@@ -114,7 +117,7 @@
             </TableView>
         </VBox>
 
-        <VBox fx:id="vboxAgregar" prefHeight="443.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
+        <VBox fx:id="vboxAgregar" prefHeight="400.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
 
             <Button fx:id="btnCerrar" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
                 <graphic>
@@ -137,19 +140,16 @@
 
             <Line endX="100.0" startX="-150.0" strokeWidth="3.0" />
 
-            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
-            <TextField />
-
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nombre" />
-            <TextField />
+            <TextField fx:id="textFieldNombreJoin" />
 
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Apellido" />
-            <TextField />
+            <TextField fx:id="textFieldApellidoJoin" />
 
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Email" />
-            <TextField />
+            <TextField fx:id="textFieldEmailJoin" />
 
-            <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="CONFIRMAR">
+            <Button fx:id="btnConfirmar" alignment="CENTER" contentDisplay="CENTER" onAction="#agregarUsuarios" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="CONFIRMAR">
             <VBox.margin>
                <Insets left="80.0" top="10.0" />
             </VBox.margin></Button>
@@ -175,16 +175,50 @@
             </ImageView>
             <Line endX="100.0" startX="-150.0" strokeWidth="3.0" />
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
-            <TextField editable="false" />
+            <TextField fx:id="textFieldModId" editable="false" styleClass="vboxTextField" stylesheets="@../Styles/Vbox.css" />
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nombre" />
-            <TextField />
+            <TextField fx:id="textFieldModNombre" />
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Apellido" />
-            <TextField />
+            <TextField fx:id="textFieldModApellido" />
             <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Email" />
-            <TextField />
-            <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="MODIFICAR">
+            <TextField fx:id="textFieldModEmail" />
+            <Button fx:id="btnModificar" alignment="CENTER" contentDisplay="CENTER" onAction="#modificar" prefHeight="38.0" prefWidth="91.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="MODIFICAR">
                <VBox.margin>
                   <Insets left="80.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="vboxPedidos" layoutX="20.0" layoutY="20.0" prefHeight="443.0" prefWidth="273.0" styleClass="vboxUser" stylesheets="@../Styles/Vbox.css" visible="false">
+         <children>
+            <Button fx:id="btnCerrarPedidos" onAction="#cerrarVentana" prefHeight="37.0" prefWidth="48.0" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="24.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/CerrarGibli.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="210.0" />
+               </VBox.margin>
+            </Button>
+            <ImageView fitHeight="91.0" fitWidth="215.0" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/pedidosLogo2.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" startX="-150.0" strokeWidth="3.0" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Nº Usuario" />
+            <TextField fx:id="textFieldModIdPedido" editable="false" prefHeight="35.0" prefWidth="253.0" styleClass="vboxTextField" stylesheets="@../Styles/Vbox.css" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Producto" />
+            <ComboBox fx:id="comboProducto" prefHeight="39.0" prefWidth="252.0" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" text="Cantidad" />
+            <TextField fx:id="textFieldModCantidad" prefHeight="37.0" prefWidth="253.0" />
+            <Label styleClass="textVbox" stylesheets="@../Styles/TextColors.css" />
+            <Button fx:id="btnAgregarPedido" alignment="CENTER" contentDisplay="CENTER" onAction="#realizarPedidos" prefHeight="38.0" prefWidth="133.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css" text="AGREGAR PEDIDO">
+               <VBox.margin>
+                  <Insets left="60.0" top="10.0" />
                </VBox.margin>
             </Button>
          </children>

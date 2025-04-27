@@ -6,9 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import Functions.CloseWindows;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ public class MainView {
 
     public void initialize() {
 
-        if(vboxMain != null) {
+        if (vboxMain != null) {
             vboxMain.setFillWidth(true);
         }
 
@@ -35,9 +35,9 @@ public class MainView {
 
 
     /*
-   +-------------------------------------------------------------------------------------------------------------------------------------------------+
-   |                                                             Botones de la interfaz                                                              |
-   +-------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------------------------------------------------------------+
+   |                                        Botones de la interfaz                                                  |
+   +----------------------------------------------------------------------------------------------------------------+
    */
 
     public void abrirVentana(String fxmlPath, String titulo) {
@@ -48,25 +48,27 @@ public class MainView {
             stage.setScene(new Scene(root));
             stage.setMaximized(true);
             stage.setTitle(titulo);
+            CloseWindows.cerrarVentanas(stage);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void pedidos(ActionEvent event){
-        abrirVentana("/View/PedidoView.fxml","Pedidos");
+    public void pedidos(ActionEvent event) {
+        abrirVentana("/View/PedidoView.fxml", "Pedidos");
         ((Stage) btnPedidos.getScene().getWindow()).close();
     }
-    public void usuarios(ActionEvent event){
-        abrirVentana("/View/UsuarioView.fxml","Usuarios");
+
+    public void usuarios(ActionEvent event) {
+        abrirVentana("/View/UsuarioView.fxml", "Usuarios");
         ((Stage) btnUsuarios.getScene().getWindow()).close();
     }
-    public void productos(ActionEvent event){
-        abrirVentana("/View/ProductoView.fxml","Productos");
+
+    public void productos(ActionEvent event) {
+        abrirVentana("/View/ProductoView.fxml", "Productos");
         ((Stage) btnProductos.getScene().getWindow()).close();
     }
-
 
 
 }

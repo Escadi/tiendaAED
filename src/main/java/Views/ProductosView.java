@@ -2,6 +2,7 @@ package Views;
 
 import Connection.ConnectDB;
 import Models.ModelProductos;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,10 +18,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 
 public class ProductosView {
+    private MainView mainView = new MainView();
     @FXML
     private TextField TextBuscar;
     @FXML
@@ -42,7 +43,6 @@ public class ProductosView {
 
 
     public void initialize() {
-        ConnectDB.openConn();
         ColidProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
         ColProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         ColPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
@@ -60,22 +60,9 @@ public class ProductosView {
    */
 
 
-    public void abrirVentana(String fxmlPath, String titulo) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setMaximized(true);
-            stage.setTitle(titulo);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void atras(ActionEvent event){
-        abrirVentana("/View/Main.fxml","Menu Principal");
+        mainView.abrirVentana("/View/Main.fxml","Menu Principal");
         ((Stage) btnAtras.getScene().getWindow()).close();
     }
 

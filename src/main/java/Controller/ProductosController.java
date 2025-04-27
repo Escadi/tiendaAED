@@ -1,5 +1,11 @@
 package Controller;
 
+import Connection.ConnectDB;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ProductosController {
 
     // Implementación de métodos para manejar productos
@@ -11,5 +17,14 @@ public class ProductosController {
     // También puedes implementar métodos para interactuar con la base de datos
     // o cualquier otra lógica necesaria para tu aplicación.
 
+    public void agregarProducto() {
+
+    }
+    public void eliminarProducto() {
+
+    }
+    public void actualizarProducto() {
+
+    }
 
 }
