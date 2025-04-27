@@ -5,12 +5,14 @@ import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
 import Class.*;
 import Models.ModelPedidos;
+import javafx.scene.control.Alert;
 
 
 public class ExportXML {
@@ -22,6 +24,7 @@ public class ExportXML {
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
 
         try {
+
             XMLEventWriter fileXMLPedidos = outputFactory.createXMLEventWriter(new FileOutputStream("Pedidos.xml"));
             XMLEvent event = eventFactory.createStartDocument();
             fileXMLPedidos.add(event);
@@ -73,10 +76,10 @@ public class ExportXML {
             fileXMLPedidos.flush();
             fileXMLPedidos.close();
 
-
         } catch (XMLStreamException e) {
 
         } catch (FileNotFoundException e) {
         }
+
     }
 }

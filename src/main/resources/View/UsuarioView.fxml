@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="820.0" prefWidth="1100.0" styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.UsuariosView">
 
     <children>
-        <VBox fx:id="vboxMain" alignment="TOP_CENTER" spacing="30.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <VBox fx:id="vboxMain" alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
             <HBox alignment="TOP_LEFT">
                 <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#atras" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
                     <graphic>
@@ -87,6 +87,20 @@
                         </ImageView>
                     </graphic>
                 </Button>
+            </HBox>
+            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnExportCSV" onAction="#createCSV" prefHeight="38.0" prefWidth="38.0" styleClass="btnSelection" stylesheets="@../Styles/Buttons.css">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" preserveRatio="true" scaleX="1.2" scaleY="1.2">
+                            <image>
+                                <Image url="@../Images/CSVGibli.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            <VBox.margin>
+               <Insets left="950.0" />
+            </VBox.margin>
             </HBox>
 
 

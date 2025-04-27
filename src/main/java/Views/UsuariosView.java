@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -55,7 +56,6 @@ public class UsuariosView {
 
 
     public void initialize() {
-        ConnectDB.openConn();
         ColidUsuario.setCellValueFactory(new PropertyValueFactory<>("id"));
         ColNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         ColApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
@@ -99,11 +99,9 @@ public class UsuariosView {
 
 
 
-        //Test de exportar CSV----------------------
-        ExportCSV exportCSV= new ExportCSV();
-        exportCSV.ExportUsuarios();
 
-        /////-----------------------------------------
+
+
 
     }
 
@@ -144,9 +142,14 @@ public class UsuariosView {
     public void agregarUsuario(ActionEvent event) {
         vboxAgregar.setVisible(true);
     }
+
     public void cerrarVentana(ActionEvent event) {
         vboxAgregar.setVisible(false);
         vboxModificar.setVisible(false);
+    }
+    public void createCSV(ActionEvent event) {
+        ExportCSV exportCSV= new ExportCSV();
+        exportCSV.ExportUsuarios();
     }
 
 

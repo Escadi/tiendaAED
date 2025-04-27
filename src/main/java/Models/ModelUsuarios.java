@@ -12,6 +12,7 @@ import java.util.List;
 public class ModelUsuarios {
 
     public static List<Usuarios> getUsuarios() {
+        ConnectDB.openConn();
         List<Usuarios> usuarios = new ArrayList<>();
         String sql = "SELECT id, nombre, apellido ,email FROM Usuarios";
         try {

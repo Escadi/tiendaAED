@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -22,6 +19,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class PedidosView {
@@ -93,6 +92,14 @@ public class PedidosView {
    +----------------------------------------------------------------------------------------------------------------+
    */
 
+    public void alerts (String title, String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     public void abrirVentana(String fxmlPath, String titulo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -110,6 +117,13 @@ public class PedidosView {
     public void atras(ActionEvent event){
         abrirVentana("/View/Main.fxml","Menu Principal");
         ((Stage) btnAtras.getScene().getWindow()).close();
+    }
+
+    public void exportXML(ActionEvent event) {
+        ExportXML exportXML = new ExportXML();
+        exportXML.ExportPedidos();
+        alerts("Exportar XML", "Archivo XML exportado correctamente.");
+
     }
 
 
