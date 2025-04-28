@@ -1,92 +1,89 @@
 package Controller;
 
-import Connection.ConnectDB;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import Models.ModelPedidos;
+import Models.ModelUsuarios;
+import javafx.collections.FXCollections;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import Class.Usuarios;
+import Class.Pedidos;
+
+
+import java.util.List;
+import java.util.Optional;
 
 public class UsuariosController {
 
-    public int idUsuario() {
-        int id = 0;
-        String sql = "SELECT MAX(id) FROM usuarios";
-        try {
-            PreparedStatement stmt = ConnectDB.getConn().prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                id = rs.getInt(1);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return id + 1;
-    }
-
-    ;
-
-    public void agregarUsuario(String nombre, String apellido, String email) {
-
-        String sql = "INSERT INTO usuarios (id, nombre, apellido, email) VALUES (?, ?, ?, ?)";
-        try {
-            PreparedStatement stmt = ConnectDB.getConn().prepareStatement(sql);
-            stmt.setInt(1, idUsuario());
-            stmt.setString(2, nombre);
-            stmt.setString(3, apellido);
-            stmt.setString(4, email);
-            int execute = stmt.executeUpdate();
-            if (execute > 0) {
-                alerts("Usuario agregado", "El usuario ha sido agregado correctamente");
-            } else {
-                alerts("Error", "No se pudo agregar el usuario");
-            }
+    private ModelUsuarios modelUsuarios = new ModelUsuarios();
 
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        /*
+   +----------------------------------------------------------------------------------------------------------------+
+   |                                        CRUD de la view de usuarios                                             |
+   +----------------------------------------------------------------------------------------------------------------+
+   */
+
+    public void agregar(String nombre, String apellido, String email, VBox box) {
+
+        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty()) {
+            alerts("Error", "Por favor, complete todos los campos.");
+        } else {
+            modelUsuarios.agregarUsuario(nombre, apellido, email);
+            box.setVisible(false);
         }
     }
 
-    public void actualizarUsuario(TextField nombre, TextField apellido, TextField email, TextField id) {
-        String sql = "UPDATE usuarios SET nombre = ?, apellido =?, email = ?  WHERE id = ?";
-        try {
-            PreparedStatement stmt = ConnectDB.getConn().prepareStatement(sql);
-            stmt.setString(1, nombre.getText());
-            stmt.setString(2, apellido.getText());
-            stmt.setString(3, email.getText());
-            stmt.setString(4, id.getText());
-            int execute = stmt.executeUpdate();
-            if (execute > 0) {
-                alerts("Usuario actualizado", "El usuario " + id.getText() + " ha sido actualizado correctamente");
-            } else {
-                alerts("Error", "No se pudo actualizar el usuario");
-            }
+    public void modificar(String nombre, String apellido, String email, int id) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Modificar el usuario");
+        alert.setHeaderText(null);
+        alert.setContentText("¿Está seguro de que desea modificar el usuario?");
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        ButtonType si = new ButtonType("Sí");
+        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(si, no);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == si) {
+            modelUsuarios.actualizarUsuario(
+                    nombre,
+                    apellido,
+                    email,
+                    id
+            );
+
         }
-
     }
 
-    public void eliminarUsuario(int id) {
-        String url = "DELETE FROM usuarios WHERE id = ?";
-        try {
-            PreparedStatement stmt = ConnectDB.getConn().prepareStatement(url);
-            stmt.setInt(1, id);
-            int execute = stmt.executeUpdate();
-            if (execute > 0) {
-                alerts("Usuario eliminado", "El usuario " + id + "ha sido eliminado correctamente");
-            } else {
-                alerts("Error", "No se pudo eliminar el usuario");
+    public void eliminar(int id) {
+        List<Pedidos> pedidosList = ModelPedidos.getPedidos();
+        Boolean usuarioEncontrado = false;
+        for (Pedidos pedidos : pedidosList) {
+            if (pedidos.getIdUsuario() == id) {
+                usuarioEncontrado = true;
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
-    }
+        if (usuarioEncontrado) {
+            alerts("Error", "No se puede eliminar el usuario porque tiene pedidos asociados.");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Eliminar el usuario");
+            alert.setHeaderText(null);
+            alert.setContentText("¿Está seguro de que desea eliminar el usuario?");
 
+            ButtonType si = new ButtonType("Sí");
+            ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            alert.getButtonTypes().setAll(si, no);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == si) {
+                modelUsuarios.eliminarUsuario(id);
+            }
+        }
+    }
 
     public void alerts(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

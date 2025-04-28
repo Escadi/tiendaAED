@@ -21,6 +21,7 @@ module org.example.tiendaaed {
 
     exports Main;
     exports Views;
+    exports Class;
 
 
 }

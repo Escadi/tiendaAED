@@ -20,12 +20,12 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public class UsuariosView {
     private UsuariosController usuariosController = new UsuariosController();
     private PedidosController pedidosController = new PedidosController();
+    private ModelPedidos modelPedidos = new ModelPedidos();
     private MainView mainView = new MainView();
     private double xOffset = 0;
     private double yOffset = 0;
@@ -80,6 +80,8 @@ public class UsuariosView {
     @FXML
     private TableColumn<Usuarios, String> ColEmail;
 
+    private ObservableList<Usuarios> usuario = FXCollections.observableArrayList(ModelUsuarios.getUsuarios());
+
 
     public void initialize() {
         llenarComboBox();
@@ -112,13 +114,13 @@ public class UsuariosView {
             }
         });
 
-           /*
+         /*
    +----------------------------------------------------------------------------------------------------------------+
    |                                 Filtro de busqueda por nombre,apellido y email                                 |
    +----------------------------------------------------------------------------------------------------------------+
    */
 
-        FilteredList<Usuarios> filterUsuarios = new FilteredList<Usuarios>(usuario, b -> true);
+        FilteredList<Usuarios> filterUsuarios = new FilteredList<>(usuario, b -> true);
         TextBuscar.textProperty().addListener((observable, oldValue, newValue) -> {
             filterUsuarios.setPredicate(usuarios -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -136,6 +138,8 @@ public class UsuariosView {
         SortedList<Usuarios> sortedData = new SortedList<>(filterUsuarios);
         sortedData.comparatorProperty().bind(TablaUsuarios.comparatorProperty());
         TablaUsuarios.setItems(sortedData);
+
+
 
         /*
    +----------------------------------------------------------------------------------------------------------------+
@@ -193,10 +197,17 @@ public class UsuariosView {
         textFieldModIdPedido.setText(String.valueOf(usuario.getId()));
     }
 
-    public int exportIdUsuario(Usuarios usuario) {
-        int id = usuario.getId();
-        return id;
+    public int exportIdUsuario() {
+        Usuarios usuarios = TablaUsuarios.getSelectionModel().getSelectedItem();
+        if (usuarios != null) {
+            return usuarios.getId();
+        } else {
+            alerts("Error", "Por favor, seleccione un usuario.");
+            return 0;
+        }
     }
+
+
 
 
         /*
@@ -205,59 +216,30 @@ public class UsuariosView {
    +----------------------------------------------------------------------------------------------------------------+
    */
 
-    public void agregar() {
+
+    public void agregarUsuarios(ActionEvent event){
         String nombre = textFieldNombreJoin.getText();
         String apellido = textFieldApellidoJoin.getText();
         String email = textFieldEmailJoin.getText();
-
-        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty()) {
-            alerts("Error", "Por favor, complete todos los campos.");
-        } else {
-            usuariosController.agregarUsuario(nombre, apellido, email);
-            TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
-            vboxAgregar.setVisible(false);
-        }
+        usuariosController.agregar(nombre,apellido,email,vboxAgregar);
+        TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
+        initialize();
     }
-
-    public void modificar() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Modificar el usuario");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Está seguro de que desea modificar el usuario?");
-
-        ButtonType si = new ButtonType("Sí");
-        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-        alert.getButtonTypes().setAll(si, no);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == si) {
-            usuariosController.actualizarUsuario(
-                    textFieldModNombre,
-                    textFieldModApellido,
-                    textFieldModEmail,
-                    textFieldModId
-            );
-            TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
-        }
+    public void modificar(ActionEvent event){
+        int id = exportIdUsuario();
+        String nombre = textFieldModNombre.getText();
+        String apellido = textFieldModApellido.getText();
+        String email = textFieldModEmail.getText();
+        usuariosController.modificar(nombre,apellido,email,id);
+        TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
+        initialize();
     }
+    public void eliminar(ActionEvent event){
+        int id = exportIdUsuario();
+        usuariosController.eliminar(id);
+        TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
+        initialize();
 
-    public void eliminar() {
-        Usuarios usuario = TablaUsuarios.getSelectionModel().getSelectedItem();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Eliminar el usuario");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Está seguro de que desea eliminar el usuario?");
-
-        ButtonType si = new ButtonType("Sí");
-        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-        alert.getButtonTypes().setAll(si, no);
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == si) {
-            usuariosController.eliminarUsuario(exportIdUsuario(usuario));
-            TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
-        }
     }
     public void pedidosAgregar(ActionEvent event) {
         Usuarios usuarios = TablaUsuarios.getSelectionModel().getSelectedItem();
@@ -265,7 +247,7 @@ public class UsuariosView {
         vboxPedidos.setVisible(true);
     }
     public void realizarPedidos(ActionEvent event) {
-        pedidosController.agregarPedido(
+        modelPedidos.agregarPedido(
                 textFieldModIdPedido,
                 comboProducto,
                 textFieldModCantidad
@@ -322,10 +304,6 @@ public class UsuariosView {
         vboxAgregar.setVisible(false);
         vboxModificar.setVisible(false);
         vboxPedidos.setVisible(false);
-    }
-
-    public void agregarUsuarios(ActionEvent event) {
-        agregar();
     }
 
     public void createCSV(ActionEvent event) {

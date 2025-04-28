@@ -165,55 +165,6 @@ public class PedidosView {
         return pedido.getId();
     }
 
-           /*
-   +----------------------------------------------------------------------------------------------------------------+
-   |                                        CRUD de la view de usuarios                                             |
-   +----------------------------------------------------------------------------------------------------------------+
-   */
-
-    public void modificarPedido() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Modificar el pedido");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Está seguro de que desea modificar el pedido?");
-
-        ButtonType si = new ButtonType("Sí");
-        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-
-        alert.getButtonTypes().setAll(si, no);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == si) {
-            PedidosController.actualizarPedido(
-                    textFieldIdUsuarioJoin,
-                    textFieldIdProductoJoin,
-                    textFieldCantidadJoin,
-                    textFieldIdPedidoJoin
-            );
-            tablaPedidos.setItems(FXCollections.observableArrayList(ModelPedidos.getPedidos()));
-        }
-    }
-
-
-    public void eliminarPedido() {
-        Pedidos pedido = tablaPedidos.getSelectionModel().getSelectedItem();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Eliminar pedido");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Está seguro de que desea eliminar el pedido?");
-
-        ButtonType si = new ButtonType("Sí");
-        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-        alert.getButtonTypes().setAll(si, no);
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == si) {
-            pedidosController.eliminarPedido(exportDataId(pedido));
-            tablaPedidos.setItems(FXCollections.observableArrayList(ModelPedidos.getPedidos()));
-        }
-        hboxBarraPedido.setVisible(false);
-    }
 
      /*
    +----------------------------------------------------------------------------------------------------------------+
@@ -248,6 +199,26 @@ public class PedidosView {
         exportDataPedidos(pedido);
         vboxModificarPedido.setVisible(true);
         hboxBarraPedido.setVisible(false);
+    }
+
+    public void modificarPedido(){
+        pedidosController.modificarPedido(
+                textFieldIdUsuarioJoin,
+                textFieldIdProductoJoin,
+                textFieldCantidadJoin,
+                textFieldIdPedidoJoin,
+                tablaPedidos
+        );
+        vboxModificarPedido.setVisible(false);
+        hboxBarraPedido.setVisible(false);
+        initialize();
+    }
+
+    public void eliminar(){
+        int id = exportDataId(tablaPedidos.getSelectionModel().getSelectedItem());
+        pedidosController.eliminarPedido(tablaPedidos,id);
+        hboxBarraPedido.setVisible(false);
+        initialize();
     }
 
     public void cerrarVentana(ActionEvent event) {

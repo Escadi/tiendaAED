@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="820.0" prefWidth="1100.0" styleClass="backgroundColor" stylesheets="@../Styles/Colors.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.UsuariosView">
 
     <children>
-        <VBox fx:id="vboxMain" alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+        <VBox fx:id="vboxMain" alignment="TOP_CENTER" style="-fx-padding: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
             <HBox alignment="TOP_LEFT">
                 <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#atras" styleClass="btnClose" stylesheets="@../Styles/Buttons.css">
                     <graphic>
@@ -107,7 +107,7 @@
             </HBox>
 
 
-            <TableView fx:id="TablaUsuarios" maxHeight="503.0" maxWidth="1001.0" minHeight="502.0" minWidth="1000.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css" VBox.vgrow="ALWAYS">
+            <TableView fx:id="TablaUsuarios" maxHeight="442.0" maxWidth="1001.0" minHeight="440.0" minWidth="1000.0" prefHeight="441.0" prefWidth="1002.0" styleClass="backgroundColorTableViews" stylesheets="@../Styles/Colors.css" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="ColidUsuario" prefWidth="129.0" text="Nº Usuario" />
                     <TableColumn fx:id="ColNombre" prefWidth="246.0" text="Nombre" />
