@@ -11,7 +11,6 @@ import Connection.ConnectDB;
 
 public class ModelPedidos {
 
-
     public static List<Pedidos> getPedidos() {
         List<Pedidos> pedidos = new ArrayList<>();
         String sql = "SELECT id,usuario_id,producto_id,cantidad,fecha FROM pedidos";

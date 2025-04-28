@@ -259,11 +259,18 @@ public class UsuariosView {
             TablaUsuarios.setItems(FXCollections.observableArrayList(ModelUsuarios.getUsuarios()));
         }
     }
-
-
-
-
-
+    public void pedidosAgregar(ActionEvent event) {
+        Usuarios usuarios = TablaUsuarios.getSelectionModel().getSelectedItem();
+        exportDataPedidos(usuarios);
+        vboxPedidos.setVisible(true);
+    }
+    public void realizarPedidos(ActionEvent event) {
+        pedidosController.agregarPedido(
+                textFieldModIdPedido,
+                comboProducto,
+                textFieldModCantidad
+        );
+    }
 
 
     /*
@@ -309,19 +316,6 @@ public class UsuariosView {
 
     public void agregarUsuario(ActionEvent event) {
         vboxAgregar.setVisible(true);
-    }
-
-    public void pedidosAgregar(ActionEvent event) {
-        Usuarios usuarios = TablaUsuarios.getSelectionModel().getSelectedItem();
-        exportDataPedidos(usuarios);
-        vboxPedidos.setVisible(true);
-    }
-    public void realizarPedidos(ActionEvent event) {
-        pedidosController.agregarPedido(
-                textFieldModIdPedido,
-                comboProducto,
-                textFieldModCantidad
-        );
     }
 
     public void cerrarVentana(ActionEvent event) {

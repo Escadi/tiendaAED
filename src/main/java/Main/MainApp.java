@@ -15,7 +15,7 @@ import java.io.IOException;
  *
  * @author David Liaño Macíasº
  * @author Eliu Manuel Viera Lorenzo
- * @author Erico
+ * @author Erico David Pérez Cárdenes
  * @version 1.0
  */
 
